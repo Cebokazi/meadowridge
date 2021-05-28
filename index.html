@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+
+        <meta charset="UTF-8">
+
+       <style>
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 180%;
+            color: black;
+            text-align: center;
+        }
+
+        .parallax1 {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("white.jpg");
+            min-height: 50%;
+            
+        }
+
+        /*.parallax3 {
+            background: url("pencil.jpg");
+            min-height: 100%;
+            
+        }
+
+        .parallax4 {
+            background: url("books.jpg");
+            min-height: 100%;
+            
+        }*/
+
+        .parallax1 {
+            position: relative;
+            opacity: .75;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .heading {
+            position: absolute;
+            color: #fff;
+            font-size: 300%;
+            top: 50%;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            text-shadow: 0 0 10px #000;
+        }
+
+        h5 {
+            text-align: right;
+            margin: 3%;
+        }
+
+        .heading-sm {
+            position: absolute;
+            top: 45%;
+            width: 100%;
+            color: #fff;
+            font-size: 250%;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px #000;
+        }
+
+        
+
+        .two-col {
+            float: left;
+            width: 42%;
+            padding: 0 4%;
+            text-align: left;
+        }
+
+        section {
+            overflow: auto;
+            padding: 50px 80px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .menu {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+            text-align: center;
+        }
+
+        .menu-ul {
+            margin: 0;
+            padding: 0;
+            display: inline;
+        }
+
+        .menu-ul li {
+            font-size: 17px;
+            list-style: none;
+            display: inline-block;
+            padding: 25px 26px 25px;
+        }
+
+        .a-menu {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+
+        .menu-ul li:hover {
+            background: transparent;
+            transform: scale(1.1);  
+        }
+
+        .logo {
+            width: 5%;
+            float: left;
+            top: 5%;
+            margin-left: 5%;
+        }
+
+        .slider {
+            width: 100px;
+            height: 500px;
+            margin: 1%;
+            background: url("event.webp");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            animation: slide 15s infinite;
+            padding-left: 30%;
+            /*float: right;*/
+        }
+
+        #slider {
+            background: url("colors.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 1%;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: -40%;
+            float: right;
+		}
+
+		.container .box {
+            position: relative;
+            width: 500px;
+            height: 400px;
+            padding: 50px;
+            background-color: transparent;
+            box-shadow: 0 5px 15px rgba(12, 12, 12, 0.548);
+            border-radius: 4px;
+            margin: 100px;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-align: center;
+		}
+
+		.container .box .icon {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            color: #fff;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            border-radius: none;
+            font-size: 40px;
+            font-weight: 700;
+            transition: 1s;
+                
+		}
+
+		.container .box .content {
+            position: relative;
+            z-index: 1;
+            transition: 0.5s;
+		}
+
+		.container .box:hover .content {
+			    color: #3d3d3dc4;
+		}
+
+		.container .box .content h1 {
+            font-size: 20px;
+            margin: 10px 0;
+            padding: 0;
+            font-family: acme;
+		}
+
+		.container .box .content p {
+            margin: 0;
+            padding: 0;
+		}
+
+        #about {
+            background: url("old.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #events {
+            background: url("colors.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+
+        .slideshow {
+                width: 700px;
+                height: 400px;
+                overflow: hidden;
+                margin-top: 180%;
+            }
+
+            .middle {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+            .navigation {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translate(-50%);
+                display: flex;
+            }
+
+            .bar {
+                width: 50px;
+                height: 10px;
+                border: 2px solid #fff;
+                margin: 6px;
+                cursor: pointer;
+                transition: 0.4s;
+            }
+
+            .bar:hover {
+                background: #fff;
+            }
+
+            input[name="r"] {
+                position: absolute;
+                visibility: hidden;
+            }
+
+            .slides {
+                width: 500%;
+                height: 100%;
+                display: flex;
+            }
+
+            .slide {
+                width: 20%;
+                transition: 0.6s;
+            }
+
+            .slide img {
+                width: 100%;
+                height: 100%;
+            }
+
+            #r1:checked ~ .s1 {
+                margin-left: 0;
+            }
+
+            #r2:checked ~ .s1 {
+                margin-left: -20%;
+            }
+
+            #r3:checked ~ .s1 {
+                margin-left: -40%;
+            }
+
+            #r4:checked ~ .s1 {
+                margin-left: -60%;
+            }
+
+            #r5:checked ~ .s1 {
+                margin-left: -80%;
+            }
+
+
+        #principals {
+            background: url("old.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+
+         div#background {
+            height: 100px;
+            width: 100%;
+            padding-top: 50px;
+            }
+
+            div#gallery {
+            width: 800px;
+            margin: auto;
+            }
+
+
+            #background img {
+            height: 150px;
+            margin: 0px;
+            }
+
+            #background figure {
+            float: left;
+            position: relative;
+            background-color: white;
+            text-align: center;
+            font-size: 15px;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 1px 2px 3px black;
+            }
+
+            figure.pic6 {
+            -webkit-transform : rotate(-8deg);
+            z-index:1;
+            }
+
+            figure.pic7 {
+            -webkit-transform : rotate(2deg);
+            z-index:1;
+            }
+
+            figure.pic8 {
+            -webkit-transform : rotate(-13deg);
+            z-index:1;
+            }
+
+            #background figure:hover {
+            box-shadow: 5px 10px 100px black;
+            -webkit-transform: scale(1.1,1.1);
+            z-index: 20;
+            }
+
+                    
+
+            #contact {
+            background: url("colors.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            }
+            
+            .contactForm
+            {
+            padding: 75px 50px;
+            background: lightgray;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.01);
+            max-width: 200px;
+            margin-top: 70px;
+            }
+
+            .contactForm:hover {
+                background-color: lightslategray;
+            }
+
+            .contactForm h3
+            {
+            color: #111;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: 500;
+            }
+            .contactForm .inputBox
+            {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+            }
+            .contactForm .inputBox input
+            {
+            width: 100%;
+            border: 1px solid #555;
+            padding: 10px;
+            color: #111;
+            outline: none;
+            font-size: 16px;
+            }
+            .contactForm .inputBox input[type="submit"]
+            {
+            font-size: 1em;
+            color: #000;
+            background: white;
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.5s;
+            max-width: 100px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            }
+
+            .contactForm .inputBox input[type="submit"]:hover {
+                background-color: gray;
+            }
+
+            .image {
+                float: left;
+            }
+
+            
+
+            @keyframes slide {
+                25% {
+                    background: url("principals.jpg");
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                }
+
+                50% {
+                    background: url("kid.webp");
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                }
+
+                75% {
+                    background: url("ceremony.jpg");
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                }
+
+                100% {
+                    background: url("sir.jpg");
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                }
+
+            }
+
+
+        @media (max-width: 768px) {
+
+            .logo {
+                height: 60px;
+                width: 50px;
+            }
+
+            .menu {
+                height: 60px;
+            }
+
+            .menu-ul li {
+                font-size: 12px;
+                display: inline;
+            }
+
+            .heading {
+                font-size: 200%;
+                top: 35%;
+            }
+
+            .heading-sm {
+                font-size: 180%;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            .slider {
+                margin-top: 10%;
+                width: 80%;
+            }
+
+            .container {
+                align-items: center;
+            }
+
+            /*.container .box .content {
+                padding-left: 80px;
+                float: right;
+                width: 50px;
+                height: 100%;
+            }*/
+
+            .slideshow {
+                margin-top: 780%;
+                width: 90%;
+            }
+            
+            div#background {
+            height: 10px;
+            width: 20%;
+            padding-top: 50px;
+            }
+
+            div#gallery {
+            width: 100px;
+            margin: auto;
+            }
+
+            #background img {
+            height: 50px;
+            margin: 0px;
+            }
+
+        }
+
+
+
+
+
+
+
+
+        
+
+       </style>
+
+    </head>
+
+    <body>
+
+        <div class="parallax1">
+            <a href="meadow.jpg"><img src="meadow.jpg" class="logo"></a>
+            <div class="menu" id="sticky">
+                <ul class="menu-ul">
+                    <a href="#" class="a-menu"><li>Home</li></a>
+                    <a href="#about" class="a-menu"><li>About</li></a>
+                    <a href="#events" class="a-menu"><li>Events</li></a>
+                    <a href="#principals" class="a-menu"><li>Principals</li></a>
+                    <a href="#contact" class="a-menu"><li>Contact</li></a>
+                </ul>
+            </div>
+    
+            <div class="heading">
+                Meadowridge Primary School </br><h5>Volhard-Persevere</h5>
+            </div>
+        </div>
+
+        <section id="slider">
+            <div class="slider"></div>
+            <div class="container">
+            <div class="box">
+              <div class="content">
+                <h6>Vision</h6>
+                <p>Our vision is to empower students to acquire, demonstrate, articulate and value knowledge and skills that will support them, as life-long learners, to participate in and contribute to the global world and practise the core values of the school: respect, tolerance & inclusion, and excellence.</p>
+                <h6>Mission</h6>
+                <p>To enable the succes to Meadowridge Primary School Students.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about">
+            <h1>About</h1>
+                <img src="meadow.jpg">
+                <p>The overriding aim of our school is to provide a happy, friendly and exciting, yet disciplined environment where every child matters; where your child is valued and encouraged to always do their best.
+                    At Meadowridge Primary School your child will receive high quality teaching in English and Maths and all subjects of the National Curriculum. Through our continued commitment to new technologies, your child will have access to the latest educational technology and software.
+                  In addition, through our Personal, Social, Health Education and Citizenship curriculum we aim to ensure our pupils develop into confident, independent and caring young people who have a love of lifetime learning.</p>
+           
+                <p>At Meadowridge Primary School we endeavour to develop each child’s self esteem and confidence and enable them to become active and valued members of the community. This will be addressed through the following aims:
+                    <b>Standards</b></br>
+                    We encourage every child to aim for their very best, attain the highest possible standards, and make good progress in relation to their prior attainment in all areas.
+                    We insist upon high standards of : </br>
+                    <b>Work</b></br>
+                    <b>Behaviour</b></br>
+                    <b>Attendance</b></br>
+                    <b>Uniform</b>
+                </br>
+                    
+                    Quality
+                    We provide an environment where children are encouraged to become independent learners through a range of teaching and learning strategies. We aim to provide pupils with teaching and learning opportunities of the highest quality, and a curriculum that fulfils the requirements of the National Curriculum and meets their individual needs.
+                   
+                    Efficiency
+                    We try to ensure that the children have the best, most stimulating resources available. We plan realistically and use the school resources efficiently to ensure good value for money from the funds available.
+        
+                    Ethos
+                    We value, respect and care for each other, our resources and our environment. We help the pupils develop their spiritual, moral, social and cultural understanding and to achieve good standards in their relationships.</br>
+                    
+                    Our School Prayer:</br>
+                    We have one world – Help us cherish it.</br>
+                    We have one life – Help us live it.</br>
+                    We are one community – Help us respect it.</p>
+        </section>
+
+        <section id="events">
+            <h1>Events</h1>
+            <p>Events hostsed and attended by Meadowridge Primary School include :</p>
+                Sports
+                </br>
+                Concerts
+                </br>
+                Graduation and Birthday celebrations
+                </br>
+                Fun and Educational Excursions
+                </br>
+                Marches
+            <div class="two-col">
+                <div class="slideshow middle">
+
+                    <div class="slides">
+                        <input type="radio" name="r" id="r1" checked>
+                        <input type="radio" name="r" id="r2">
+                        <input type="radio" name="r" id="r3">
+                        <input type="radio" name="r" id="r4">
+                        <input type="radio" name="r" id="r5">
+        
+                        <div class="slide s1">
+                            <img src="concert.jpg" alt="">
+                        </div>
+        
+                        <div class="slide">
+                            <img src="soccer.jpg" alt="">
+                        </div>
+        
+                        <div class="slide">
+                            <img src="athletics.jpg" alt="">
+                        </div>
+        
+                        <div class="slide">
+                            <img src="march.jpg" alt="">
+                        </div>
+        
+                        <div class="slide">
+                            <img src="winner.png" alt="">
+                        </div>
+        
+                        <div class="navigation">
+                            <label for="r1" class="bar"></label>
+                            <label for="r2" class="bar"></label>
+                            <label for="r3" class="bar"></label>
+                            <label for="r4" class="bar"></label>
+                            <label for="r5" class="bar"></label>
+                        </div>
+        
+                    </div>
+               </div>
+        
+            </div>
+        </section>
+
+        <section id="principals">
+            <h1>Teachers</h1>
+
+            <div id="background">
+                <div id="gallery">
+                  
+                  <p>The Head Teacher and his Deputies</p>
+
+                  <figure class="pic6">
+                    <img src="deputy.jpg" />
+                    <figcaption>Mr Diergaardt</figcaption>
+                  </figure>
+                  <figure class="pic7">
+                    <img src="principals.jpg" />
+                    <figcaption>Principals</figcaption>
+                  </figure>
+                  <figure class="pic8">
+                    <img src="albateyn.jpg" />
+                    <figcaption>Mr Albateyn</figcaption>
+                  </figure>
+                </div>
+              </div>
+        </section>
+
+    
+            <section class="contact" id="contact">
+                <div class="title">
+                    <h2 class="titleText"><span>C</span>ontact Us</h2>
+                    <p>If you would like to connect with us or have any suggestion, please write to us using the following:</p>
+                </div>
+                <form
+              action="https://formspree.io/f/xoqyddjo"
+              method="POST">
+                <div class="contactForm">
+                   
+                    <div class="inputBox">
+                        <input type="text" placeholder="Name...">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" placeholder="Email Address...">
+                    </div>
+                    <div class="inputBox">
+                        <textarea placeholder="Text..."></textarea>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Send">
+                    </div>
+                </div>
+            </form><br/>
+            <div class="image">
+            <img src="school.jpg" width="300" height="200">
+            </div>
+            </section>
+
+        <script>
+            function stickyMenu () {
+                var sticky=document.getElementById ('sticky');
+                if (window.pageYOffset > 220) {
+                    sticky.classList.add('sticky');
+                }
+
+                else {
+                    sticky.classList.remove('sticky');
+                }
+            }
+
+            window.onscroll = function () {
+                stickyMenu ();
+            }
+
+        </script>
+
+
+    </body>
+</html>
