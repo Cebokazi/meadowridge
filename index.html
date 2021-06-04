@@ -3,8 +3,8 @@
 
     <head>
 
-
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
        <style>
 
@@ -17,25 +17,13 @@
             text-align: center;
         }
 
-        .parallax1 {
+        .parallax {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("white.jpg");
             min-height: 50%;
             
         }
 
-        /*.parallax3 {
-            background: url("pencil.jpg");
-            min-height: 100%;
-            
-        }
-
-        .parallax4 {
-            background: url("books.jpg");
-            min-height: 100%;
-            
-        }*/
-
-        .parallax1 {
+        .parallax {
             position: relative;
             opacity: .75;
             background-position: center;
@@ -70,8 +58,6 @@
             letter-spacing: 5px;
             text-shadow: 0 0 10px #000;
         }
-
-        
 
         .two-col {
             float: left;
@@ -120,6 +106,45 @@
             background: transparent;
             transform: scale(1.1);  
         }
+
+        .dropbtn {
+            background-color: transparent;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+            }
+
+            .dropdown {
+            position: relative;
+            display: inline-block;
+            }
+
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            }
+
+            .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            }
+
+            .dropdown-content a:hover {background-color: #ddd;}
+
+            .dropdown:hover .dropdown-content {display: block;}
+
+            .dropdown:hover .dropbtn {background: rgba(0,0,0,0.2);}
 
         .logo {
             width: 5%;
@@ -231,7 +256,7 @@
                 width: 700px;
                 height: 400px;
                 overflow: hidden;
-                margin-top: 180%;
+                margin-top: 215%;
             }
 
             .middle {
@@ -362,77 +387,156 @@
             z-index: 20;
             }
 
-                    
-
             #contact {
-            background: url("colors.jpg");
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("papers.jpg");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            height: 100vh;
-            }
-            
-            .contactForm
-            {
-            padding: 75px 50px;
-            background: lightgray;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.01);
-            max-width: 200px;
-            margin-top: 70px;
+            /*height: 100vh;*/
             }
 
-            .contactForm:hover {
-                background-color: lightslategray;
+            form{
+            width: 500px;
+            border: 2px black;
+            margin: auto; 
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 5px;
+            float: left;
             }
 
-            .contactForm h3
-            {
-            color: #111;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            font-weight: 500;
-            }
-            .contactForm .inputBox
-            {
-            position: relative;
-            width: 100%;
-            margin-bottom: 20px;
-            }
-            .contactForm .inputBox input
-            {
-            width: 100%;
-            border: 1px solid #555;
-            padding: 10px;
-            color: #111;
-            outline: none;
-            font-size: 16px;
-            }
-            .contactForm .inputBox input[type="submit"]
-            {
-            font-size: 1em;
-            color: #000;
-            background: white;
-            display: inline-block;
+            h2{
+            color: white;
+            text-align: center;
             text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 2px;
-            transition: 0.5s;
-            max-width: 100px;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
+            margin-bottom: 20px;
             }
 
-            .contactForm .inputBox input[type="submit"]:hover {
-                background-color: gray;
+            input, textarea{
+            width: 100%;
+            margin-bottom: 25px;
+            padding: 7px;
+            font-size: 15px;
+            border: none; 
+            background: black;
+            color: white;
             }
 
-            .image {
-                float: left;
+            ::placeholder {
+            color: #fff;
             }
 
+            textarea{
+            min-height: 100px;
+            max-height: 200px;
+            max-width: 100%;
+            min-width: 100%;
+            }
+
+            .btn{
+            text-transform: uppercase;
+            background: lightslategray;
+            color: #fff;
+            padding: 15px;
+            }
+
+            .btn:hover{
+            background-color: black;
+            }
+
+           .map {
+               margin-right: 900px;
+               
+           }
+
+           .footer-text .text{
+            text-align: center;
+          }
+
+          .container{
+                max-width: 1170px;
+                margin:auto;
+            }
+
+            .row{
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            ul{
+                list-style: none;
+            }
+
+            .footer{
+                background-color: #24262b;
+                padding: 70px 0;
+                margin-top: 5%;
+                height: 50vh;
+            }
+
+            .footer-col{
+            width: 25%;
+            padding: 0 15px;
+            }
             
+            .footer-col h4{
+                font-size: 18px;
+                color: #ffffff;
+                text-transform: capitalize;
+                margin-bottom: 35px;
+                font-weight: 500;
+                position: relative;
+            }
+
+            .footer-col ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+
+            .footer-col ul li {
+                font-size: 16px;
+                text-transform: capitalize;
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: 300;
+                color: #bbbbbb;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+            .footer-col ul li:hover{
+                color: #ffffff;
+                padding-left: 8px;
+            }
+
+            .footer-col .social-links a{
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                background-color: rgba(255,255,255,0.2);
+                margin:0 10px 10px 0;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color: #ffffff;
+                transition: all 0.5s ease;
+            }
+
+            .footer-col .social-links a:hover{
+                color: #24262b;
+                background-color: #ffffff;
+            }
+
+            .png {
+                margin-top: 5%;
+            }
+            
+
+            .copyright-text {
+              font-size: 13px;
+              color: #fff;
+              text-align: center;
+            }
 
             @keyframes slide {
                 25% {
@@ -508,7 +612,7 @@
             }*/
 
             .slideshow {
-                margin-top: 780%;
+                margin-top: 800%;
                 width: 90%;
             }
             
@@ -528,16 +632,57 @@
             margin: 0px;
             }
 
+            form{
+                width: 100%;
+            }
+
+            .image {
+                width: 350px;
+            }
+
+            .png {
+                width: 50px;
+                padding-left: 50%;
+            }
+
+            .footer {
+                padding:  30px;
+                margin-top: 1%;
+                height: 25vh;
+            }
+
+            .footer-col{
+                    width: 10%;
+                    padding: 8px;
+                }
+
+                .footer-col h4{
+                    font-size: 8px;
+                    margin-bottom: 18px;
+                    font-weight: 250;
+                }
+
+                .footer-col ul li:not(:last-child){
+                    margin-bottom: 5px;
+                }
+
+                .footer-col ul li{
+                    font-size: 8px;
+                    font-weight: 150;
+                    transition: all 0.3s ease;
+                }
+
+                .footer-col ul li:hover{
+                    padding-left: 4px;
+                }
+
+                .footer-col .social-links a{
+                height: 20px;
+                width: 20px;
+                margin: 0 5px 5px 0;
+                border-radius:25%;
+            }
         }
-
-
-
-
-
-
-
-
-        
 
        </style>
 
@@ -545,8 +690,9 @@
 
     <body>
 
-        <div class="parallax1">
+        <div class="parallax">
             <a href="meadow.jpg"><img src="meadow.jpg" class="logo"></a>
+            
             <div class="menu" id="sticky">
                 <ul class="menu-ul">
                     <a href="#" class="a-menu"><li>Home</li></a>
@@ -554,6 +700,15 @@
                     <a href="#events" class="a-menu"><li>Events</li></a>
                     <a href="#principals" class="a-menu"><li>Principals</li></a>
                     <a href="#contact" class="a-menu"><li>Contact</li></a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Menu</button>
+                        <div class="dropdown-content">
+                          <a href="calendar.pdf">School Calendar</a>
+                          <a href="https://admissions.westerncape.gov.za/admissions/login">Admission</a>
+                          <a href="https://admissions.westerncape.gov.za/admissions/admission.sm_admissions_tracking.track_learner_app?session_id=4296416&p_user_id=21CM618102">Track Application</a>
+                          <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19-schools">Covid-19</a>
+                        </div>
+                      </div>
                 </ul>
             </div>
     
@@ -567,9 +722,9 @@
             <div class="container">
             <div class="box">
               <div class="content">
-                <h6>Vision</h6>
-                <p>Our vision is to empower students to acquire, demonstrate, articulate and value knowledge and skills that will support them, as life-long learners, to participate in and contribute to the global world and practise the core values of the school: respect, tolerance & inclusion, and excellence.</p>
-                <h6>Mission</h6>
+                <b>Vision</b>
+                <p>Our vision is to empower students to acquire, demonstrate, articulate and value knowledge and skills that will support them, as life-long learners, to participate in and contribute to the global world and practise the core values of the school: respect, tolerance & inclusion, and excellence.</p><br/>
+                <b>Mission</b>
                 <p>To enable the succes to Meadowridge Primary School Students.</p>
               </div>
             </div>
@@ -670,54 +825,77 @@
             <div id="background">
                 <div id="gallery">
                   
-                  <p>The Head Teacher and his Deputies</p>
+                  <p>These are these are Head Teachers</p><br/>
 
                   <figure class="pic6">
-                    <img src="deputy.jpg" />
+                    <a href="deputy.jpg"><img src="deputy.jpg"></a>
                     <figcaption>Mr Diergaardt</figcaption>
                   </figure>
                   <figure class="pic7">
-                    <img src="principals.jpg" />
+                    <a href="principals.jpg"><img src="principals.jpg"></a>
                     <figcaption>Principals</figcaption>
                   </figure>
                   <figure class="pic8">
-                    <img src="albateyn.jpg" />
+                    <a href="albateyn.jpg"><img src="albateyn.jpg"></a>
                     <figcaption>Mr Albateyn</figcaption>
                   </figure>
                 </div>
               </div>
         </section>
 
-    
-            <section class="contact" id="contact">
-                <div class="title">
-                    <h2 class="titleText"><span>C</span>ontact Us</h2>
+            <section id="contact">
+                    <h1>Contact and Connect</h1>
                     <p>If you would like to connect with us or have any suggestion, please write to us using the following:</p>
-                </div>
-                <form
-              action="https://formspree.io/f/xoqyddjo"
-              method="POST">
-                <div class="contactForm">
-                   
-                    <div class="inputBox">
-                        <input type="text" placeholder="Name...">
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" placeholder="Email Address...">
-                    </div>
-                    <div class="inputBox">
-                        <textarea placeholder="Text..."></textarea>
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" value="Send">
-                    </div>
-                </div>
-            </form><br/>
-            <div class="image">
-            <img src="school.jpg" width="300" height="200">
-            </div>
-            </section>
 
+                    <form action="https://formspree.io/f/xoqyddjo" method="POST">
+                    <input type="text" name="name" placeholder="Name..." required>
+                    <input type="email" name="email" placeholder="Email Address..." required>
+                    <textarea name="message" id="mensaje" placeholder="Write to us..." required></textarea>
+                    <input class="btn" type="submit" value="Send">
+                    </form>
+
+                    <div class="png">
+                    <a href="https://goo.gl/maps/TZydBEF33prKgm8G8"><img src="location.png"></a><br/><br/>
+                    <a href="https://www.facebook.com/meadowridgeprimary/"><img src="facebook.png"></a> <br/><br/>
+                    <a href="mailto:Meadowridgeprim@gmail.com"><img src="email.png"></a> <br/><br/>
+                    <a href="tel:+27213761145"><img src="phone.png"> </a>
+                    </div>
+                
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col">
+                            <div class="map">
+                                <div class="dropdown">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1618.551320109052!2d18.6148714296805!3d-34.03375567725801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc4f5573dba6e3%3A0x991a988351943a55!2sMeadowridge%20Primary%20School!5e0!3m2!1sen!2sza!4v1622465419999!5m2!1sen!2sza" width="200" height="150" allowfullscreen="" loading="lazy"></iframe>
+                                  <div class="dropdown-content">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1618.551320109052!2d18.6148714296805!3d-34.03375567725801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc4f5573dba6e3%3A0x991a988351943a55!2sMeadowridge%20Primary%20School!5e0!3m2!1sen!2sza!4v1622465419999!5m2!1sen!2sza" width="400" height="350" allowfullscreen="" loading="lazy"></iframe>
+                                  </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                      <div class="footer-col">
+                            <h4>For Directions</h4>
+                            <ul>
+                                <li>Kreupelhout St, Lentegeur, Cape Town, 7786</li>
+                                <li>Opens from: 7am-2:35pm</li>
+                                <li>+27213761145</li>
+                                <li>XJ89+GC Mitchells Plain, Cape Town</li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <div class="image">
+                                <img src="school.jpg" width="450" height="400">
+                            </div>
+                        </div>
+                        <div class="copyright-text">
+                            &copy; 2020 Cebokazi Makasi - All Rights Reserve
+                        </div>
+                    </div>
+                </div>
+           </footer>
+         
         <script>
             function stickyMenu () {
                 var sticky=document.getElementById ('sticky');
@@ -735,7 +913,6 @@
             }
 
         </script>
-
 
     </body>
 </html>
